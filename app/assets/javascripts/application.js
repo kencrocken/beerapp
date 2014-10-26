@@ -14,3 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+    $("input.search").keydown(function(event) {
+        if (event.keyCode == 13) { /* enter */
+            event.preventDefault();
+            $(this).parent("form").submit();
+        }
+    });
+});

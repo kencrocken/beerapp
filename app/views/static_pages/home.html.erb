@@ -1,2 +1,33 @@
-<h1>BEER</h1>
-<p>Soon to be searching for beer!</p>
+<form id="beer-search" method="get" accept-charset="utf-8">
+  <input type="text" class="search" name="q" value="<%= Rack::Utils.escape_html @query %>" placeholder="Search for a beer.">
+</form>
+
+<% if @error %>
+  <div class="error">
+    <%= @error %>
+  </div>
+<% end %>
+
+<div id="results">
+  <% if @beers && @beers.empty? %>
+    <p>Your search returned no results. :(</p>
+  <% end %>
+  <ul>
+  <% @beers.each do |beer| %>
+    <li class="beer">
+      <% if beer.image_url %>
+        <img src='<%= beer.image_url %>'>
+      <% else %>
+        <img src='http://fillmurray.com/g/256/256'>
+      <% end %>
+      <span class="name"><%= beer.name %></span>
+      <span class="description"><%= beer.description %></span>
+      <span class="abv">Alcohol by volume: <%= beer.abv %>%</span>
+      <form id="beer-show" class="beerid" action="<%= static_pages_search_path %>" method="post" accept-charset="utf-8">
+        <input type="hidden" name="beerid" value="<%= beer.id %>">
+        <input type="submit" class="button" value="More Info&raquo;">
+      </form>
+    </li>
+  <% end if @beers %>
+  </ul>
+</div>

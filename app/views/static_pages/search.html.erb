@@ -1,0 +1,30 @@
+<% if @error %>
+  <div class="error">
+    <%= @error %>
+  </div>
+<% end %>
+
+<div id="results">
+  <h2><%= @beers["name"] %></h2>
+
+      <% if @beers["labels"] %>
+        <img src='<%= @beers["labels"]["medium"] %>'>
+      <% else %>
+        <img src='http://fillmurray.com/g/256/256'>
+      <% end %>
+    <p class="description"><%= @beers["description"]%></p>
+  <ul>
+    <li class="beer">      
+      
+      <span class="abv">Alcohol by volume: <%= @beers["abv"] %>%</span>
+      <% if @beers["glass"] %>
+      <span class="glass">Glass Type: <%= @beers["glass"]["name"] %></span>
+      <% end %>
+      <% if @beers["style"] %>
+      <span class="style">Style: <%= @beers["style"]["name"] %> <br> <%= @beers["style"]["description"] %></span>
+      <% end %>
+      <span class="return"><a href="#" onClick="history.go(-2)">Return to Search Results</a></span>
+    </li>
+  </ul>
+
+</div>
