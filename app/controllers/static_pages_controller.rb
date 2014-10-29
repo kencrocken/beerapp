@@ -21,7 +21,7 @@ class StaticPagesController < ApplicationController
         logger.info response.body
         @beers = parse_beers(response)
       else
-        @error = response.body
+        @error = "The search can not be empty."
       end
     end
 

@@ -1,10 +1,11 @@
-<form id="beer-search" method="get" accept-charset="utf-8">
-  <input type="text" class="search" name="q" value="<%= Rack::Utils.escape_html @query %>" placeholder="Search for a beer.">
-</form>
+
+<%= form_tag("/", method: "get", id: "beer-search") do %>
+  <%= text_field_tag(:q, nil, class: 'search', value: params[:q]) %>
+<% end %>
 
 <% if @error %>
   <div class="error">
-    <%= @error %>
+    <p><%= @error %></p>
   </div>
 <% end %>
 
@@ -23,10 +24,12 @@
       <span class="name"><%= beer.name %></span>
       <span class="description"><%= beer.description %></span>
       <span class="abv">Alcohol by volume: <%= beer.abv %>%</span>
-      <form id="beer-show" class="beerid" action="<%= static_pages_search_path %>" method="post" accept-charset="utf-8">
-        <input type="hidden" name="beerid" value="<%= beer.id %>">
-        <input type="submit" class="button" value="More Info&raquo;">
-      </form>
+
+      <%= form_tag(static_pages_search_path, method: "post", id: "beer-show", class: "beerid") do %>
+        <%= hidden_field_tag('beerid', beer.id) %>
+        <%= submit_tag("More Info", class: 'button') %>
+      <% end %>
+
     </li>
   <% end if @beers %>
   </ul>
