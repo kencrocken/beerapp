@@ -23,7 +23,7 @@
       <% if @beers["style"] %>
       <span class="style">Style: <%= @beers["style"]["name"] %> <br> <%= @beers["style"]["description"] %></span>
       <% end %>
-      <span class="return"><a href="#" onClick="history.go(-2)">Return to Search Results</a></span>
+      <span class="return"><%= link_to "Return to Search Results", 'javascript:history.back()' %></span>
     </li>
   </ul>
 

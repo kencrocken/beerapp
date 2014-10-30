@@ -8,40 +8,39 @@ describe "Beer home page" do
     Capybara.current_driver = :webkit
   end
 
-  it "displays Beer Lookup" do
+  def enter_search(search = "autumn")
+    visit "/"
+    fill_in "q", with: search
+
+    keypress = "var e = $.Event('keydown', { keyCode: 13 }); $('input.search').trigger(e);"
+    page.driver.execute_script(keypress)
+  end
+
+
+  it "displays a title, Beer Lookup and a search field " do
     visit "/"
 
     expect(page).to have_title('Beerapp')
     expect(page).to have_content('Beer Lookup')
+    expect(page).to have_selector('input.search')
   end
 
   it "displays list items after search", :js => true do
-    visit "/"
-    fill_in "q", with: "sam adams"
-
-    keypress = "var e = $.Event('keydown', { keyCode: 13 }); $('input.search').trigger(e);"
-    page.driver.execute_script(keypress)
-
+    enter_search
     expect(page).to have_selector("li.beer")
   end
 
   it "displays no results found", :js => true do
-    visit "/"
-    fill_in "q", with: "beer"
-
-    keypress = "var e = $.Event('keydown', { keyCode: 13 }); $('input.search').trigger(e);"
-    page.driver.execute_script(keypress)
-
+    enter_search("beer")
     expect(page).to have_content("Your search returned no results. :(")
   end
 
   it "displays error message with an empty search", :js => true do 
-    visit "/"
-
-    keypress = "var e = $.Event('keydown', { keyCode: 13 }); $('input.search').trigger(e);"
-    page.driver.execute_script(keypress)
-
+    enter_search(" ")
     expect(page).to have_selector("div.error")
+  end
+
+  it "displays a single beer when more info button clicked", :js => true do
   end
 
   after(:all) do
