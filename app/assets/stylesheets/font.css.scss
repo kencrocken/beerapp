@@ -1,12 +1,12 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
 
 @font-face {
   font-family: 'icomoon';
-  src:url('fonts/icomoon/icomoon.eot?-vyqi8');
-  src:url('fonts/icomoon/icomoon.eot?#iefix-vyqi8') format('embedded-opentype'),
-    url('fonts/icomoon/icomoon.woff?-vyqi8') format('woff'),
-    url('fonts/icomoon/icomoon.ttf?-vyqi8') format('truetype'),
-    url('fonts/icomoon/icomoon.svg?-vyqi8#icomoon') format('svg');
+  src:asset-url('fonts/icomoon/icomoon.eot?-vyqi8');
+  src:asset-url('fonts/icomoon/icomoon.eot?#iefix-vyqi8') format('embedded-opentype'),
+    asset-url('fonts/icomoon/icomoon.woff?-vyqi8') format('woff'),
+    asset-url('fonts/icomoon/icomoon.ttf?-vyqi8') format('truetype'),
+    asset-url('fonts/icomoon/icomoon.svg?-vyqi8#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
