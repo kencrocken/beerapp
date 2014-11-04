@@ -19,19 +19,18 @@
   .footer-logo {
     margin-right: 1em;
     margin-bottom: 1em;
-
+    font-size: 2em;
+    float: left;
     @include media($large-screen) {
-      float: left;
+     
       margin-bottom: 0;
     }
   }
 
-  .footer-logo img {
-    height: 1.6em;
-  } 
   .footer-main-links {
     float: left;
     font-size: .8em;
+    margin-top: 1em;
   }
   ul {
     margin-bottom: 1em;
@@ -61,8 +60,11 @@
   }
 
   .footer-secondary-links {
-    @include media($large-screen) {
+    // margin-top: 0.7em;
+    margin-top: 0.5em;
       float: right;
+    @include media($large-screen) {
+
     }
 
     li {
@@ -71,10 +73,8 @@
     }
 
     ul.footer-social {
-      margin-top: 1em;
-
       @include media($large-screen) {
-        float: right;
+       float: right; 
         margin-top: 0;
       }
 
