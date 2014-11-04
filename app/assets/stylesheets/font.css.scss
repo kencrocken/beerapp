@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'icomoon';
-  src:url('fonts/icomoon.eot?-vyqi8');
-  src:url('fonts/icomoon.eot?#iefix-vyqi8') format('embedded-opentype'),
-    url('fonts/icomoon.woff?-vyqi8') format('woff'),
-    url('fonts/icomoon.ttf?-vyqi8') format('truetype'),
-    url('fonts/icomoon.svg?-vyqi8#icomoon') format('svg');
+  src:url('fonts/icomoon/icomoon.eot?-vyqi8');
+  src:url('fonts/icomoon/icomoon.eot?#iefix-vyqi8') format('embedded-opentype'),
+    url('fonts/icomoon/icomoon.woff?-vyqi8') format('woff'),
+    url('fonts/icomoon/icomoon.ttf?-vyqi8') format('truetype'),
+    url('fonts/icomoon/icomoon.svg?-vyqi8#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -49,11 +49,11 @@
 
 @font-face {
   font-family: 'et-line';
-  src:  asset-url('fonts/et-line.eot');
-  src:  asset-url('fonts/et-line.eot?#iefix') format('embedded-opentype'),
-        asset-url('fonts/et-line.woff') format('woff'),
-        asset-url('fonts/et-line.ttf') format('truetype'),
-        asset-url('fonts/et-line.svg#et-line') format('svg');
+  src:  asset-url('fonts/et-line/et-line.eot');
+  src:  asset-url('fonts/et-line/et-line.eot?#iefix') format('embedded-opentype'),
+        asset-url('fonts/et-line/et-line.woff') format('woff'),
+        asset-url('fonts/et-line/et-line.ttf') format('truetype'),
+        asset-url('fonts/et-line/et-line.svg#et-line') format('svg');
   font-weight: normal;
   font-style: normal;
 }
