@@ -1,0 +1,51 @@
+$break-small: 480px;
+$Open-Sans-Con: 'Open Sans Condensed', sans-serif;
+$seconds: 0.5s;
+$large-screen: em(860);
+
+@mixin transition_all_ease($seconds){
+  transition: all $seconds ease;
+  -webkit-transition: all $seconds ease;
+  -moz-transition: all $seconds ease;
+  -o-transition: all $seconds ease;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #fff;
+  margin-top: 1em;
+  font-size: 16px;
+  font-family: $helvetica;
+  color: #444;
+}
+
+a {
+  @include transition_all_ease(0.3s);
+  &:link, &:visited {
+    color: #A33;  
+  }
+  &:hover, &:active {
+    color: #E44;  
+  }
+}
+
+.wrapper {
+  @include outer-container;
+  max-width: 600px;
+  min-height: 100%;
+  margin: 0 auto -100px auto;
+}
+.wrapper:after {
+  content: "";
+  display: block;
+}
+
+#content {
+}
+
+footer, .wrapper:after {
+  height: 100px;
+}

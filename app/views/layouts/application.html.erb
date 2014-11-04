@@ -9,13 +9,14 @@
 <body>
 
   <div class="wrapper">
-    <header>
-      <h1>Beer Lookup</h1>
-    </header>
-    <div class="content">
-      <%= yield %>
-    </div>
-    <footer>Powered by <a href="http://brewerydb.com" target="_blank">BreweryDB</a>.</footer>
+
+    <%= render 'layouts/header' %>
+
+    <%= yield %>
+
   </div> <!-- Wrapper -->
+
+  <%= render 'layouts/footer' %>
+
 </body>
 </html>

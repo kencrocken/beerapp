@@ -5,13 +5,14 @@
 <% end %>
 
 <div id="results">
-  <h2><%= @beers["name"] %></h2>
+  <h2 class="beer_name"><%= @beers["name"] %></h2>
 
       <% if @beers["labels"] %>
         <img src='<%= @beers["labels"]["medium"] %>'>
       <% else %>
         <img src='http://fillmurray.com/g/256/256'>
       <% end %>
+      
     <p class="description"><%= @beers["description"]%></p>
   <ul>
     <li class="beer">      

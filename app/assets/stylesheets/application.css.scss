@@ -12,84 +12,39 @@
  *
  *= require_self
  */
+@import "normalize";
 @import "bourbon";
+@import "base/base";
 @import "neat";
+@import "font";
 
-@mixin transition_all_ease($seconds){
-  transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-}
+@import "global";
+@import "header";
+@import "search_form";
+@import "footer";
 
-body {
-  background-color: #fff;
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
-  font-family: $helvetica;
-  color: #444;
-}
+// input.button {
+//   @include button(#C1dad6);
+// }
 
-a {
-  &:link, &:visited {
-    color: #A33;  
-  }
-  &:hover, &:active {
-    color: #E44;  
-  }
-}
-
-.wraper {
-  @include outer-container;
-  max-width: 600px;
-}
-
-header {
-  font-weight: bold;
-  text-align: center;
-  h1 {
-    margin: 0;
-    padding: 18px;  
-  }
-}
-
-#content {
-  @include outer-container;
-  text-align: center;
-}
-
-
-form#beer-search {
-  margin-bottom: 2em;
-  text-align: center;
-}
-
-input.search {
-  padding: 8px;
-  font-size: 1.8em;
-  border-radius: 30px;
-  -webkit-border-radius: 30px;
-  border: solid 1px #777;
-  text-indent: 18px;
-  background-color: #fff;
-  @include transition_all_ease(0.5s);
-  &:focus {
-    border: solid 1px #111;
-    background-color: #efefef;
-    outline: none;    
-  }
-}
-
-input.button {
-  @include button(#C1dad6);
+input[type="submit"], .button {
+-webkit-font-smoothing: antialiased;
+background-color: #477DCA;
+border-radius: 0.1875em;
+color: white;
+display: inline-block;
+font-size: 1em;
+font-weight: bold;
+line-height: 1;
+padding: .75em 1em;
+text-decoration: none;
 }
 
 #results {
   max-width: 600px;
   margin: 0 auto;
   ul {
-    margin: 20px;
+    // margin: 20px;
     list-style-type: none;
   }
   li {
@@ -99,11 +54,26 @@ input.button {
   p {
     text-align: left;
   }
+  .results_info {
+    margin-left: 20%;
+  }
+  .beer_name {
+    text-align: center;
+    padding-bottom: 1em;
+  }
+  img {
+    position: relative;
+    margin: 0 auto;
+    display: block;
+  }
 }
 
 .beer {
+  background: #F9F9F9;
+  padding: 1em;
   clear: left;
   text-align: left;
+  max-width: 600px;
   .noimg {
     width: 100px;
     height: 100px;
@@ -116,7 +86,7 @@ input.button {
     margin-right: 12px;
   }
   span.name, span.return {
-    margin-left: 120px;
+    // margin-left: 120px;
     font-size: 1.1em;
     font-weight: bold;
     display: block;
@@ -124,20 +94,51 @@ input.button {
   span.description, span.glass, span.style, .beerid {
     display: block;
     font-size: 0.8em;
-    margin-left: 120px;
+    // margin-left: 120px;
+    padding-bottom: 5px;
   }
   span.abv {
     display: block;
-    margin-left: 120px;
+    // margin-left: 120px;
     font-size: .7em;
     color: red;
+    margin-bottom: 15px;
   }
 }
 
-footer {
-  color: #888;
-  font-size: 0.9em;
-  text-align: center;
-  margin-top: 5em;
-  margin-bottom: 1em;
-}
+// footer {
+//   max-width: 600px;
+//   color: #888;
+//   font-size: 0.9em;
+//   margin-right: auto;
+//   margin-left: auto;
+//   li {
+//     display: inline;
+//   }
+//   .tag {
+//     margin-top: 8px;
+//     .github {
+//       font-size: 1.25em;
+//     }
+//     a {
+//       color: #000;
+//       &:link {
+//         text-decoration: none;
+//         opacity: 0.4;
+//         color: #000;
+//       }
+//       &:visited { 
+//         opacity: 0.4;
+//         color: #000;
+//       }
+//       &:hover {
+//         opacity: 1;
+//       }
+//     }
+//   }
+//}
+
+
+
+
+
