@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get 'static_pages/about'
   post 'static_pages/search'
 
+  get 'about', to: 'static_pages#about'
+
   resources :beers
 
   # The priority is based upon order of creation: first created -> highest priority.
