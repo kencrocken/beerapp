@@ -11,6 +11,23 @@
   </div>
 <% end %>
 
+<div id="featured">
+  <h1>Featured Beer</h1>
+    <h2><%= @featured["name"] %></h2>
+  <div class="featured_image">
+    <%= image_tag("#{@featured["labels"]["medium"]}") %>
+  </div>
+  <div class="featured_info">
+    <span class="description"><%= @featured["description"] %></span>
+    <span class="abv>"><%= @featured["abv"] %></span>
+
+    <%= form_tag(static_pages_search_path, method: "post", id: "beer-show", class: "beerid") do %>
+      <%= hidden_field_tag('beerid', @featured["id"]) %>
+      <%= submit_tag("More Info", class: 'button') %>
+    <% end %>
+  </div>
+</div>
+
 <div id="results">
   <% if @beers && @beers.empty? %>
     <p>Your search returned no results. :(</p>
@@ -19,9 +36,9 @@
   <% @beers.each do |beer| %>
     <li class="beer">
       <% if beer.image_url %>
-        <img src='<%= beer.image_url %>'>
+        <%= image_tag("#{beer.image_url}") %>
       <% else %>
-        <img src='http://fillmurray.com/g/256/256'>
+        <%= image_tag("http://fillmurray.com/g/256/256") %>
       <% end %>
 
       <div class="results_info">

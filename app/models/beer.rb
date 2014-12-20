@@ -10,4 +10,5 @@ class Beer < ActiveRecord::Base
       b.id = json["id"]
     end
   end
+
 end

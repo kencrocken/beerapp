@@ -10,6 +10,28 @@ $large-screen: em(860);
   -o-transition: all $seconds ease;
 }
 
+@mixin beer_info {
+  span.name, span.return {
+    // margin-left: 120px;
+    font-size: 1.1em;
+    font-weight: bold;
+    display: block;
+  }
+  span.description, span.glass, span.style, .beerid {
+    display: block;
+    font-size: 0.8em;
+    // margin-left: 120px;
+    padding-bottom: 5px;
+  }
+  span.abv {
+    display: block;
+    // margin-left: 120px;
+    font-size: .7em;
+    color: red;
+    margin-bottom: 15px;
+  }
+}
+
 html, body {
   height: 100%;
 }

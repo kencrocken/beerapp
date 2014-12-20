@@ -9,6 +9,10 @@ class Brewerydb
     @api_key = api_key
   end
 
+  def featured
+    self.class.get '/featured', query: { key: @api_key, format: 'json' }
+  end
+
   def search(query)
     self.class.get '/search', query: {
       type: 'beer',
@@ -19,7 +23,7 @@ class Brewerydb
   end
 
   def show_beer(beerid)
-    self.class.get "/beer/#{beerid}?key=#{@api_key}", query: { format: 'json' }
+    self.class.get "/beer/#{beerid}", query: { key: @api_key, format: 'json' }
   end
   
 end

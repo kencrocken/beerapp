@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
 
   def home
+    get_featured
     @query = params[:q]
     do_search @query if @query
   end
@@ -15,6 +16,16 @@ class StaticPagesController < ApplicationController
 
   private
 
+    def get_featured
+      response = api.featured
+      if response.code == 200
+        logger.info response.body
+        @featured = response["data"]["beer"]
+      else
+        @error = response.body
+      end
+    end
+    
     def do_search(q)
       response = api.search(q)
       if response.code == 200

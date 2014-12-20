@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'icomoon';
-  src:asset-url('fonts/icomoon/icomoon.eot?-vyqi8');
-  src:asset-url('fonts/icomoon/icomoon.eot?#iefix-vyqi8') format('embedded-opentype'),
-    asset-url('fonts/icomoon/icomoon.woff?-vyqi8') format('woff'),
-    asset-url('fonts/icomoon/icomoon.ttf?-vyqi8') format('truetype'),
-    asset-url('fonts/icomoon/icomoon.svg?-vyqi8#icomoon') format('svg');
+  src:  asset-url('fonts/icomoon/icomoon.eot?-u60niv');
+  src:  asset-url('fonts/icomoon/icomoon.eot?#iefix-u60niv') format('embedded-opentype'),
+        asset-url('fonts/icomoon/icomoon.woff?-u60niv') format('woff'),
+        asset-url('fonts/icomoon/icomoon.ttf?-u60niv') format('truetype'),
+        asset-url('fonts/icomoon/icomoon.svg?-u60niv#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -37,15 +37,19 @@
 .icon-uniE600:before {
   content: "\e600";
 }
+.icon-arrow-up:before {
+  content: "\e604";
+}
 
-  .beer-icon {
-    background-color: #FAC937;
-    color: #d87800;
-    font-size: 2.5em;
-    padding: 5px;
-    border: 5px solid #d87800;
-    border-radius: 50%;
-  }
+
+.beer-icon {
+  background-color: #FAC937;
+  color: #d87800;
+  font-size: 2.5em;
+  padding: 5px;
+  border: 5px solid #d87800;
+  border-radius: 50%;
+}
 
 @font-face {
   font-family: 'et-line';

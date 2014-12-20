@@ -21,11 +21,20 @@
 @import "global";
 @import "header";
 @import "search_form";
+@import "featured";
 @import "footer";
 
 // input.button {
 //   @include button(#C1dad6);
 // }
+
+#featured, #results {
+  img {
+    position: relative;
+    margin: 0 auto;
+    display: block;
+  }
+}
 
 input[type="submit"], .button {
   @include button(pill);
@@ -45,17 +54,12 @@ input[type="submit"], .button {
   p {
     text-align: left;
   }
-  .results_info {
-    margin-left: 20%;
-  }
   .beer_name {
     text-align: center;
     padding-bottom: 1em;
   }
-  img {
-    position: relative;
-    margin: 0 auto;
-    display: block;
+  .results_info {
+    margin-left: 20%;
   }
   p {
     padding: 1em;
@@ -79,60 +83,5 @@ input[type="submit"], .button {
     float: left;
     margin-right: 12px;
   }
-  span.name, span.return {
-    // margin-left: 120px;
-    font-size: 1.1em;
-    font-weight: bold;
-    display: block;
-  }
-  span.description, span.glass, span.style, .beerid {
-    display: block;
-    font-size: 0.8em;
-    // margin-left: 120px;
-    padding-bottom: 5px;
-  }
-  span.abv {
-    display: block;
-    // margin-left: 120px;
-    font-size: .7em;
-    color: red;
-    margin-bottom: 15px;
-  }
+  @include beer_info;
 }
-
-// footer {
-//   max-width: 600px;
-//   color: #888;
-//   font-size: 0.9em;
-//   margin-right: auto;
-//   margin-left: auto;
-//   li {
-//     display: inline;
-//   }
-//   .tag {
-//     margin-top: 8px;
-//     .github {
-//       font-size: 1.25em;
-//     }
-//     a {
-//       color: #000;
-//       &:link {
-//         text-decoration: none;
-//         opacity: 0.4;
-//         color: #000;
-//       }
-//       &:visited { 
-//         opacity: 0.4;
-//         color: #000;
-//       }
-//       &:hover {
-//         opacity: 1;
-//       }
-//     }
-//   }
-//}
-
-
-
-
-

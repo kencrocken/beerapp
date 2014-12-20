@@ -7,7 +7,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= controller_name %> <%= action_name %>">
 
   <div class="wrapper">
 
@@ -19,5 +19,13 @@
 
   <%= render 'layouts/footer' %>
 
+<script>
+  $(function() {
+    $("a[href='#top']").click(function() {
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+      return false;
+    });
+  });
+</script>
 </body>
 </html>
