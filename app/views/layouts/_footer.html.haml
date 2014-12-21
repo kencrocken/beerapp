@@ -1,0 +1,13 @@
+%footer.footer-2
+  .footer-logo
+    %span.icon-uniE600
+  .footer-main-links 
+    Powered by 
+    %a=link_to 'BreweryDB', 'http://breweryDB.com'
+  .footer-secondary-links
+    .footer-social
+      %ul.footer-social
+        %li=link_to '<span class="icon-home"></span>'.html_safe, root_path
+        %li=link_to '<span class="icon-info"></span>'.html_safe, about_path
+        %li=link_to '<span class="icon-uniE601"></span>'.html_safe, 'http://github.com/kencrocken/beerapp' 
+        %ii=link_to '<span class="icon-arrow-up"></span>'.html_safe, '#top'

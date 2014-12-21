@@ -3,29 +3,29 @@
     <%= @error %>
   </div>
 <% end %>
-
 <div id="results">
   <h2 class="beer_name"><%= @beers["name"] %></h2>
-
-      <% if @beers["labels"] %>
-        <img src='<%= @beers["labels"]["medium"] %>'>
-      <% else %>
-        <img src='http://fillmurray.com/g/256/256'>
-      <% end %>
-      
-    <p class="description"><%= @beers["description"]%></p>
+  <% if @beers["labels"] %>
+    <%= image_tag @beers["labels"]["medium"] %>
+  <% else %>
+    <%= image_tag("http://fillmurray.com/g/256/256") %>
+  <% end %>
+  <p class="description"><%= "#{@beers['description]'}"%></p>
   <ul>
-    <li class="beer">      
-      
-      <span class="abv">Alcohol by volume: <%= @beers["abv"] %>%</span>
-      <% if @beers["glass"] %>
-      <span class="glass">Glass Type: <%= @beers["glass"]["name"] %></span>
+    <li class="beer">
+      <span class="abv">Alcohol by volume:
+        <%= "#{@beers['abv']}" %>%</span>
+      <% if @beers['glass'] %>
+        <span class="glass">Glass Type:
+          <%= "#{@beers['glass']['name']}" %></span>
       <% end %>
-      <% if @beers["style"] %>
-      <span class="style">Style: <%= @beers["style"]["name"] %> <br> <%= @beers["style"]["description"] %></span>
+      <% if @beers['style'] %>
+        <span class="style">Style:
+          <%= "#{@beers['style']['name']}" %>
+          <br>
+          <%= "#{@beers['style']['description']}" %></span>
       <% end %>
       <span class="return"><%= link_to "Return to Search Results", 'javascript:history.back()' %></span>
     </li>
   </ul>
-
 </div>

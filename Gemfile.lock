@@ -55,6 +55,8 @@ GEM
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.2.2)
+    haml (4.0.6)
+      tilt
     hike (1.2.3)
     httparty (0.13.1)
       json (~> 1.8)
@@ -170,6 +172,7 @@ DEPENDENCIES
   capybara
   capybara-webkit
   coffee-rails (~> 4.0.0)
+  haml
   httparty
   jbuilder (~> 2.0)
   jquery-rails
